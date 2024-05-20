@@ -5,12 +5,57 @@
     overflow: hidden;
     position: relative;
     background-size: cover;
+    
 }
 .content{
   text-align: center;
   position: absolute;
   top: 50%;
   left: 50%;
+  color:var(--secondary-color);
   transform: translate(-50%,-50%);
-  
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4);
+  padding:10px  5px;
+  border-radius: 10px;
+}
+.carousel-section, .quotes{
+    background-color:var(--primary-color);
+    /* height: 100vh; */
+}
+
+.carousel-item, .view-btn ,.quote-carousel{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 100%;
+}
+.txt-container{
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    color: var(--accent-color);
+}
+.about-glitter{
+    color: var(--accent-color);
+}
+
+.img-cont{
+    position: relative;
+    width: 100%; 
+    height: 400px; 
+}
+.img-cont-2{
+    position: relative;
+    width: 100%; 
+    height: 500px; 
+}
+.img-data{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.img-data-2{
+    position: absolute;
+    top:0;
+    right: 0;
 }

@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+    --primary-color:#c9b5a4;
+    --secondary-color:#fff;
+    --tertiary-color:#000;
+    --accent-color:#8b684a;
+
+    --font-family-regular: "MessinaSans-Regular", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+.btn-main{
+    background-color:var(--primary-color);
+    color: var(--secondary-color);
+}
+.btn-main:hover{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.btn-sub{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.btn-sub:hover{
+    background-color: var(--tertiary-color);
+    color:var(--primary-color);
+}

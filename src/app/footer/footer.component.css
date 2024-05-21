@@ -1,0 +1,12 @@
+section{
+    background-color: var(--primary-color);
+    height: 100%;
+}
+p{
+    cursor: pointer;
+    transition: .6s ease;
+    
+}
+p:hover{
+    transform: scale(1.05);
+}

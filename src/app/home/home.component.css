@@ -121,4 +121,7 @@
       height: auto; 
       width: 250px;
   }
+  input[type="checkbox"]:checked{
+    background: var(--primary-color)!important;
+  }
  

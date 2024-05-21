@@ -24,7 +24,7 @@
     /* height: 100vh; */
 }
 
-.carousel-item, .view-btn ,.quote-carousel{
+.carousel-item, .view-btn ,.quote-carousel ,.carousel-item>i{
     align-items: center;
     justify-content: center;
     display: flex;
@@ -58,4 +58,20 @@
     position: absolute;
     top:0;
     right: 0;
+}
+.prev-icon::before{
+    content: "\f0d9"; 
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    display: inline-block;
+    font-size: 2em;
+    color:var(--accent-color);  
+}
+.next-icon::before{
+    content: "\f0da"; 
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900; 
+    display: inline-block;
+    font-size: 2em;
+    color: var(--accent-color);  
 }

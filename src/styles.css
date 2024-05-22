@@ -24,6 +24,16 @@
     background-color: var(--tertiary-color);
     color:var(--primary-color);
 }
+
+.btn-extra{
+    background-color: var(--tertiary-color);
+    color: var(--primary-color);
+}
+
+.btn-extra:hover{
+    background-color: var(--primary-color);
+    color:var(--tertiary-color);
+}
 .carousel-indicators [data-bs-target]{
     box-sizing: content-box;
     flex: 0 1 auto;

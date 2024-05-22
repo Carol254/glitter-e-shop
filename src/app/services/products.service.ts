@@ -20,4 +20,13 @@ export class ProductsService {
   getAllProducts():Observable<productData[]>{
     return this.http.get<productData[]>('http://localhost/glitterinfo/list.php');
   }
+
+  getLadiesProducts():Observable<productData[]>{
+    return this.http.get<productData[]>('http://localhost/glitterinfo/ladies.php');
+  }
+
+  getMensProducts():Observable<productData[]>{
+    return this.http.get<productData[]>('http://localhost/glitterinfo/men.php');
+  }
+
 }

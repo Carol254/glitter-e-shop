@@ -30,3 +30,6 @@
 .dropdown-item:hover{
     transform: scale(1.05);
 }
+ul.navbar-nav li.dropdown:hover ul.dropdown-menu{
+    display: block;
+}

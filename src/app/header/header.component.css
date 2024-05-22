@@ -22,3 +22,11 @@
 .dropdown-menu{
      background-color: hsla(0, 0%, 100%, .75) !important;
 }
+.dropdown-item{
+    cursor: pointer;
+    transition: .6s ease;
+    
+}
+.dropdown-item:hover{
+    transform: scale(1.05);
+}

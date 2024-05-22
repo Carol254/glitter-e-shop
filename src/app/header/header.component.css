@@ -9,3 +9,16 @@
     /* background-color: hsla(0, 0%, 100%, .75) !important; */
     background-color: #c9b5a4 !important;
 }
+
+.navbar-full .dropdown-menu {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+}
+
+.navbar-full .dropdown, .navbar-full .navbar-nav .nav-item.dropdown {
+    position: static !important;
+}
+.dropdown-menu{
+     background-color: hsla(0, 0%, 100%, .75) !important;
+}

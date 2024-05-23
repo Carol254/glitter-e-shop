@@ -82,26 +82,26 @@
     height: 100%;
     color: var(--accent-color);
 }
-#section{
-    margin-top: 20px;
-    /* background-color: var(--primary-color) !important; */
-  }
-.cardy   {
-    /* border: 2px solid var(--primary-color); */
-    margin: 10px 4px;
-    transition: .6s ease;
-  }
-  
-  .cardy:hover {
-    transform: scale(1.05);
+/* Arrow Button Styles */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 4rem;
+    color: var(--accent-color);
+    z-index: 10;
+    user-select: none;
   }
   
- 
-  .cardy-img-top{
-    width: 200px;
-    height: 200px;
-    object-fit: contain;
+  .left-arrow {
+    left: 10px;
   }
+  
+  .right-arrow {
+    right: 10px;
+  }
+  
   .scrollcards {
     background-color: #fff;
     overflow: auto;
@@ -109,18 +109,30 @@
   }
   
   ::-webkit-scrollbar {
-      width: 0px;
-      height: 0px;
-      background: transparent;
+    width: 0px;
+    height: 0px;
+    background: transparent;
   }
   
-  div.scrollcards .cardy {
-      display: inline-block;
-      /* padding: 14px; */
-      text-decoration: none;
-      height: auto; 
-      width: 250px;
+  .scrollcards .cardy {
+    display: inline-block;
+    margin: 10px 4px;
+    text-decoration: none;
+    height: auto;
+    width: 250px;
+    transition: .6s ease;
   }
+  
+  .cardy:hover {
+    transform: scale(1.05);
+  }
+  
+  .cardy-img-top {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+  }
+  
   input[type="checkbox"]:checked{
     background: var(--primary-color)!important;
   }

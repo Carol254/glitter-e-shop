@@ -1,5 +1,6 @@
 import { IMAGE_CONFIG, NgOptimizedImage,NgFor } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,23 +13,26 @@ import { AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 
 export class HomeComponent implements AfterViewInit {
 
+  constructor(private router:Router){}
+
   speed:number = 50;
   initialTxt:number = 0;
   requiredTxt:any = 'Adorn yourself with the brilliance of our unique jewelry pieces. Shop now for unmatched elegance.';
   observer: IntersectionObserver | undefined;
 
   @ViewChild('intro', { static: false }) intro!: ElementRef;
+  @ViewChild('scrollContainer', { static: false }) scrollContainer!: ElementRef;
 
   currentIndex = 0;
   images1 = [
-    '/assets/img-2.jpg',
-    '/assets/img-3.jpg',
-    '/assets/img-4.jpg'
+    '/assets/photo_12.jpg',
+    '/assets/photo_13.jpg',
+    '/assets/photo_14.jpg'
   ];
   images2 = [
-    '/assets/img-5.jpg',
-    '/assets/img-6.jpg',
-    '/assets/img-7.jpg'
+    '/assets/photo_15.jpg',
+    '/assets/photo_16.jpg',
+    '/assets/photo_17.jpg'
   ];
   quotes = [
     { text: 'You cant cry on a diamonds shoulder, and diamonds wont keep you warm at night, but theyre sure fun when the sun shines.', author: 'Elizabeth Taylor' },
@@ -79,6 +83,24 @@ export class HomeComponent implements AfterViewInit {
 
   nextSlide() {
     this.currentIndex = (this.currentIndex < this.quotes.length - 1) ? this.currentIndex + 1 : 0;
+  }
+
+  viewAllProducts(){
+    this.router.navigate(['/all-products']);
+  }
+
+  scrollLeft(): void {
+    this.scrollContainer.nativeElement.scrollBy({
+      left: -250, // Adjust this value to your preference
+      behavior: 'smooth'
+    });
+  }
+
+    scrollRight(): void {
+    this.scrollContainer.nativeElement.scrollBy({
+      left: 250, // Adjust this value to your preference
+      behavior: 'smooth'
+    });
   }
 
 }

@@ -3,19 +3,14 @@
         <div class="content px-2">
             <h3>WELCOME TO GLITTER COLLECTIONS</h3>
             <p #intro></p>
-            <button class="btn btn-main">SHOP NOW</button>
+            <button class="btn btn-main" (click)="viewAllProducts()">SHOP NOW</button>
         </div>
     </div>
 </div>
 <section class="carousel-section">
     <div class="py-5">
         <div class="container">
-            <div id="carouselExampleCaptions" class="carousel slide  carousel-fade">
-                <!-- <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div> -->
+            <div id="carouselExampleCaptions" class="carousel slide  carousel-fade"  data-bs-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
                     <img src="assets/banner-4.jpg" class="d-block w-50" alt="...">
@@ -52,7 +47,7 @@
 
             </div>
             <div class="view-btn mt-4">
-                <button class="btn btn-sub">VIEW ALL JEWELRY</button>
+                <button class="btn btn-sub" (click)="viewAllProducts()">VIEW ALL JEWELRY</button>
             </div>
 
         </div>
@@ -66,7 +61,7 @@
                     <div class="col-6">
                         <div class="d-flex mt-4">
                             <div><h4 class="txt-container">GLITTER DESIGN</h4></div>
-                            <div><img src="\assets\img-2.jpg" style="width: 200px; height: 200px;"></div>
+                            <div><img src="\assets\banner-3.jpg" style="width: 200px; height: 200px; object-fit: contain;"></div>
                         </div>
                         
                     </div>
@@ -88,12 +83,12 @@
                              sint laboriosam accusamus minus, 
                             totam sunt omnis culpa incidunt reprehenderit.
                         </p>
-                        <button class="btn btn-main">SEE MORE</button>
+                        <button class="btn btn-extra">SEE MORE</button>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4">
-                <img src="\assets\img-3.jpg" style="width: 400px; height: 400px; object-fit: contain;">
+                <img src="\assets\photo_4.jpg" style="width: 400px; height: 400px; object-fit: contain;">
             </div>
         </div>
     </div>
@@ -107,7 +102,7 @@
           </div>
         </div>
         <div class="col-lg-4">
-          <div id="carouselExampleFade" class="carousel slide carousel-fade">
+          <div id="carouselExampleFade" class="carousel slide carousel-fade"  data-bs-ride="carousel">
             <div class="carousel-indicators pt-5">
               <button *ngFor="let indicator of images1; let i = index" type="button" [attr.data-bs-target]="'#carouselExampleFade'" [attr.data-bs-slide-to]="i" [class.active]="i === currentIndex" aria-current="i === currentIndex ? 'true' : null" [attr.aria-label]="'Slide ' + (i + 1)"></button>
             </div>
@@ -148,7 +143,7 @@
                   <input type="text" class="form-control" id="inputEmail" placeholder="Email" style="border-radius: 0 !important;" >
                 </div>
                 <div class="">
-                  <button type="submit" class="btn btn-main mb-3" style="border-radius: 0 !important;">JOIN US</button>
+                  <button type="submit" class="btn btn-extra mb-3" style="border-radius: 0 !important;">JOIN US</button>
                 </div>
               </form>
             <div>
@@ -163,54 +158,44 @@
 
 <section>
     <div class="container">
-        <div class="slider">
-            <div id="section">
-                <h4 class="text-center" style="color: var(--accent-color);">glitter_designs </h4>
-              
-                <div class="container-fluid">
-                  <div class="row">
-                    <div class="scrollcards">
-                      
-                        <div class="cardy">
-                          <img class="card-img-top" src="assets/img-1.jpg">
-                        </div>
-                      
-                        <div class="cardy">
-                          <img class="card-img-top" src="assets/img-2.jpg">
-                        </div>
-                        
-                        <div class="cardy">
-                          <img class="card-img-top" src="assets/img-3.jpg">
-                        </div>
-                      
-                        <div class="cardy">
-                          <img class="card-img-top" src="assets/img-5.jpg">
-                        </div>
-                      
-                        <div class="cardy">
-                          <img class="card-img-top" src="assets/img-7.jpg">
-                        </div>
-                      
-                        <div class="cardy">
-                            <img class="card-img-top" src="assets/img-9.jpg">
-                          </div>
-
-                        <div class="cardy">
-                         <img class="card-img-top" src="\assets\pexels-jellybeanphotography-216491.jpg">
-                        </div>
-
-                        <div class="cardy">
-                            <img class="card-img-top" src="\assets\pexels-tubarones-2764973.jpg">
-                        </div>
-
-                        <div class="cardy">
-                            <img class="card-img-top" src="\assets\pexels-taylor-thompson-865581658-20090400.jpg">
-                        </div>
-                    </div>
-                  </div>
-                 </div>
-                 <h6 class="text-center mb-3" style="color: var(--accent-color);">Made with love <i class="fa-solid fa-heart"></i> just for you and yours <i class="fa-solid fa-face-smile"></i></h6>
+      <div class="slider">
+        <div id="section">
+          <h4 class="text-center" style="color: var(--accent-color);">glitter_designs </h4>
+          <div class="container-fluid position-relative">
+            <div class="arrow left-arrow" (click)="scrollLeft()">&lt;</div>
+            <div class="arrow right-arrow" (click)="scrollRight()">&gt;</div>
+            <div class="row">
+              <div class="scrollcards" #scrollContainer>
+                <div class="cardy">
+                  <img class="card-img-top cardy-img-top" src="assets/photo_18.jpg">
+                </div>
+                <div class="cardy">
+                  <img class="card-img-top cardy-img-top" src="assets/photo_5.jpg">
+                </div>
+                <div class="cardy">
+                  <img class="card-img-top cardy-img-top" src="assets/photo_11.jpg">
+                </div>
+                <div class="cardy">
+                  <img class="card-img-top cardy-img-top" src="assets/photo_25.jpg">
+                </div>
+                <div class="cardy">
+                  <img class="card-img-top cardy-img-top" src="assets/photo_23.jpg">
+                </div>
+                <div class="cardy">
+                  <img class="card-img-top cardy-img-top" src="assets/photo_17.jpg">
+                </div>
+                <div class="cardy">
+                  <img class="card-img-top cardy-img-top" src="assets/photo_11.jpg">
+                </div>
+                <div class="cardy">
+                  <img class="card-img-top cardy-img-top" src="assets/photo_13.jpg">
+                </div>
               </div>
+            </div>
+          </div>
+          <h6 class="text-center mb-3" style="color: var(--accent-color);">Made with love <i class="fa-solid fa-heart"></i> just for you and yours <i class="fa-solid fa-face-smile"></i></h6>
         </div>
+      </div>
+      
     </div>
 </section>

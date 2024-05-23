@@ -1,5 +1,5 @@
 import { IMAGE_CONFIG, NgOptimizedImage,NgFor } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild, viewChild} from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 
 
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent implements AfterViewInit,OnInit{
 
   constructor(private router:Router){}
 
@@ -22,6 +22,7 @@ export class HomeComponent implements AfterViewInit {
 
   @ViewChild('intro', { static: false }) intro!: ElementRef;
   @ViewChild('scrollContainer', { static: false }) scrollContainer!: ElementRef;
+  @ViewChild('mainContainer',{static:false}) mainContainer!:ElementRef;
 
   currentIndex = 0;
   images1 = [
@@ -45,14 +46,28 @@ export class HomeComponent implements AfterViewInit {
     '/assets/photo_13.jpg',
     '/assets/photo_12.jpg'
   ];
+
+  bannerImages = [
+    '/assets/banner-1.jpg',
+    '/assets/banner-2.jpg',
+    '/assets/banner-3.jpg'
+  ];
+
+  currentImageIndex: number = 0;
+
   quotes = [
     { text: 'You cant cry on a diamonds shoulder, and diamonds wont keep you warm at night, but theyre sure fun when the sun shines.', author: 'Elizabeth Taylor' },
     { text: 'The finest workers in stone are not copper or steel tools, but the gentle touches of air and water working at their leisure with a liberal allowance of time', author: 'Henry David Thoreau' },
     { text: 'Big girls need big diamonds.', author: 'Elizabeth Taylor' }
   ];
+  ngOnInit(): void {
   
+  }
+
  ngAfterViewInit(): void {
+  this.loadBannerImages();
   this.initIntersectionObserver();
+
   }
 
   ngOnDestroy(): void {
@@ -80,12 +95,25 @@ export class HomeComponent implements AfterViewInit {
     this.initialTxt = 0;
   }
 
+
   typeWriter(){
     if(this.initialTxt < this.requiredTxt.length ){
       this.intro.nativeElement.innerHTML += this.requiredTxt.charAt(this.initialTxt);
       this.initialTxt ++;
       setTimeout(() => this.typeWriter(), this.speed);
     }
+  }
+
+  setBackgroundImage(): void {
+    this.mainContainer.nativeElement.style.background = `url(${this.bannerImages[this.currentImageIndex]}) no-repeat center center/cover`;
+  } 
+
+  loadBannerImages(): void {
+    this.setBackgroundImage();
+    setInterval(() => {
+      this.currentImageIndex = (this.currentImageIndex + 1) % this.bannerImages.length;
+      this.setBackgroundImage();
+    }, 8000); // Change image every 8 seconds
   }
 
   prevSlide() {

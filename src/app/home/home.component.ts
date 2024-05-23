@@ -49,8 +49,10 @@ export class HomeComponent implements AfterViewInit,OnInit{
 
   bannerImages = [
     '/assets/banner-1.jpg',
-    '/assets/banner-2.jpg',
-    '/assets/banner-3.jpg'
+    '/assets/banner-4.jpg',
+    '/assets/banner-5.jpg',
+    '/assets/banner-6.jpg',
+    '/assets/banner-7.jpg',
   ];
 
   currentImageIndex: number = 0;

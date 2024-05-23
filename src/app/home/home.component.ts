@@ -34,6 +34,17 @@ export class HomeComponent implements AfterViewInit {
     '/assets/photo_16.jpg',
     '/assets/photo_17.jpg'
   ];
+  images3 = [
+    '/assets/photo_18.jpg',
+    '/assets/photo_5.jpg',
+    '/assets/photo_11.jpg',
+    '/assets/photo_25.jpg',
+    '/assets/photo_23.jpg',
+    '/assets/photo_17.jpg',
+    '/assets/photo_11.jpg',
+    '/assets/photo_13.jpg',
+    '/assets/photo_12.jpg'
+  ];
   quotes = [
     { text: 'You cant cry on a diamonds shoulder, and diamonds wont keep you warm at night, but theyre sure fun when the sun shines.', author: 'Elizabeth Taylor' },
     { text: 'The finest workers in stone are not copper or steel tools, but the gentle touches of air and water working at their leisure with a liberal allowance of time', author: 'Henry David Thoreau' },

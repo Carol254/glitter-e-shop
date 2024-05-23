@@ -119,7 +119,7 @@
     margin: 10px 4px;
     text-decoration: none;
     height: auto;
-    width: 250px;
+    width: 200px;
     transition: .6s ease;
   }
   
@@ -131,6 +131,7 @@
     width: 200px;
     height: 200px;
     object-fit: contain;
+    
   }
   
   input[type="checkbox"]:checked{

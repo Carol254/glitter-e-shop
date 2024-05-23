@@ -61,7 +61,7 @@
                     <div class="col-6">
                         <div class="d-flex mt-4">
                             <div><h4 class="txt-container">GLITTER DESIGN</h4></div>
-                            <div><img src="\assets\banner-3.jpg" style="width: 200px; height: 200px; object-fit: contain;"></div>
+                            <div><img src="\assets\photo_20.jpg" style="width: 200px; height: 200px; object-fit: contain;"></div>
                         </div>
                         
                     </div>
@@ -165,30 +165,11 @@
             <div class="arrow left-arrow" (click)="scrollLeft()">&lt;</div>
             <div class="arrow right-arrow" (click)="scrollRight()">&gt;</div>
             <div class="row">
-              <div class="scrollcards" #scrollContainer>
-                <div class="cardy">
-                  <img class="card-img-top cardy-img-top" src="assets/photo_18.jpg">
-                </div>
-                <div class="cardy">
-                  <img class="card-img-top cardy-img-top" src="assets/photo_5.jpg">
-                </div>
-                <div class="cardy">
-                  <img class="card-img-top cardy-img-top" src="assets/photo_11.jpg">
-                </div>
-                <div class="cardy">
-                  <img class="card-img-top cardy-img-top" src="assets/photo_25.jpg">
-                </div>
-                <div class="cardy">
-                  <img class="card-img-top cardy-img-top" src="assets/photo_23.jpg">
-                </div>
-                <div class="cardy">
-                  <img class="card-img-top cardy-img-top" src="assets/photo_17.jpg">
-                </div>
-                <div class="cardy">
-                  <img class="card-img-top cardy-img-top" src="assets/photo_11.jpg">
-                </div>
-                <div class="cardy">
-                  <img class="card-img-top cardy-img-top" src="assets/photo_13.jpg">
+              <div class="scrollcards d-flex px-5" #scrollContainer>
+                <div *ngFor="let imgCard of images3">
+                  <div class="cardy">
+                    <img class="card-img-top cardy-img-top " [src]="imgCard">
+                  </div>
                 </div>
               </div>
             </div>

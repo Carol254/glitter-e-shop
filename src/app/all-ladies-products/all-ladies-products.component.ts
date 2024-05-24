@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { productData } from '../models/products';
 import { ProductsService } from '../services/products.service';
 import { NgFor } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-all-ladies-products',
@@ -12,7 +13,7 @@ import { NgFor } from '@angular/common';
 })
 export class AllLadiesProductsComponent implements OnInit{
   
-  constructor(private productsService:ProductsService){}
+  constructor(private productsService:ProductsService ,private router:Router){}
   
   ladiesProducts:productData[] = [];
 
@@ -27,5 +28,9 @@ export class AllLadiesProductsComponent implements OnInit{
         this.ladiesProducts = data;
       }
     })
+  }
+
+  buyNow(){
+    this.router.navigate(['/product-details']);
   }
 }

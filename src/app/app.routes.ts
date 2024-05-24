@@ -11,6 +11,7 @@ import { LadiesRingsComponent } from './ladies-rings/ladies-rings.component';
 import { LadiesEarringsComponent } from './ladies-earrings/ladies-earrings.component';
 import { LadiesBraceletsComponent } from './ladies-bracelets/ladies-bracelets.component';
 import { AllLadiesProductsComponent } from './all-ladies-products/all-ladies-products.component';
+import { DetailsPageComponent } from './details-page/details-page.component';
 
 export const routes: Routes = [
     {path:'home',component:HomeComponent},
@@ -28,5 +29,6 @@ export const routes: Routes = [
         ]
     },
     {path:'mens-products',component:MensProductsComponent},
+    {path:'product-details',component:DetailsPageComponent},
     {path:'',redirectTo:'/home',pathMatch:'full'},
 ];

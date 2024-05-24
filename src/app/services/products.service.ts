@@ -25,6 +25,25 @@ export class ProductsService {
     return this.http.get<productData[]>('http://localhost/glitterinfo/ladies.php');
   }
 
+  getLadiesWatches():Observable<productData[]>{
+    return this.http.get<productData[]>('http://localhost/glitterinfo/ladies-watches.php');
+  }
+
+  getLadiesNeckalces():Observable<productData[]>{
+    return this.http.get<productData[]>('http://localhost/glitterinfo/ladies-necklaces.php');
+  }
+  getLadiesRings():Observable<productData[]>{
+    return this.http.get<productData[]>('http://localhost/glitterinfo/ladies-rings.php');
+  }
+
+  getLadiesEarrings():Observable<productData[]>{
+    return this.http.get<productData[]>('http://localhost/glitterinfo/ladies-earrings.php');
+  } 
+
+  getLadiesBracelets():Observable<productData[]>{
+    return this.http.get<productData[]>('http://localhost/glitterinfo/ladies-bracelets.php');
+  }  
+
   getMensProducts():Observable<productData[]>{
     return this.http.get<productData[]>('http://localhost/glitterinfo/men.php');
   }

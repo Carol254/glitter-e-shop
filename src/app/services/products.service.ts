@@ -29,7 +29,7 @@ export class ProductsService {
     return this.http.get<productData[]>('http://localhost/glitterinfo/ladies-watches.php');
   }
 
-  getLadiesNeckalces():Observable<productData[]>{
+  getLadiesNecklaces():Observable<productData[]>{
     return this.http.get<productData[]>('http://localhost/glitterinfo/ladies-necklaces.php');
   }
   getLadiesRings():Observable<productData[]>{

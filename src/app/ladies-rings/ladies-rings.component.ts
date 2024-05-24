@@ -17,11 +17,11 @@ export class LadiesRingsComponent implements OnInit {
   ladiesProducts:productData[] = [];
 
   ngOnInit(): void {
-      this.getLadiesProducts();
+      this.getLadiesRings();
   }
 
-  getLadiesProducts(){
-    this.productsService.getLadiesProducts().subscribe({
+  getLadiesRings(){
+    this.productsService.getLadiesRings().subscribe({
       next:(data)=>{
         console.log(data);
         this.ladiesProducts = data;

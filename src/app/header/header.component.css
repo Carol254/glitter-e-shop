@@ -25,7 +25,6 @@
 .dropdown-item{
     cursor: pointer;
     transition: .6s ease;
-    
 }
 .dropdown-item:hover{
     transform: scale(1.05);

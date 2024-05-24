@@ -32,3 +32,13 @@
 ul.navbar-nav li.dropdown:hover ul.dropdown-menu{
     display: block;
 }
+.dropdown-menu-scroll {
+    /* max-height: 200px; */
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  @media (max-width: 767px) {
+    .dropdown-menu-scroll {
+      max-height: 150px; /* Adjust the height as needed for smaller screens */
+    }}

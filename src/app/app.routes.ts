@@ -5,13 +5,28 @@ import { ShopComponent } from './shop/shop.component';
 import { AllProductsComponent } from './all-products/all-products.component';
 import { LadiesProductsComponent } from './ladies-products/ladies-products.component';
 import { MensProductsComponent } from './mens-products/mens-products.component';
+import { LadiesWatchesComponent } from './ladies-watches/ladies-watches.component';
+import { LadiesNecklacesComponent } from './ladies-necklaces/ladies-necklaces.component';
+import { LadiesRingsComponent } from './ladies-rings/ladies-rings.component';
+import { LadiesEarringsComponent } from './ladies-earrings/ladies-earrings.component';
+import { LadiesBraceletsComponent } from './ladies-bracelets/ladies-bracelets.component';
+import { AllLadiesProductsComponent } from './all-ladies-products/all-ladies-products.component';
 
 export const routes: Routes = [
-    {path:'',redirectTo:'/home',pathMatch:'full'},
     {path:'home',component:HomeComponent},
     {path:'about',component:AboutComponent},
     {path:'shop',component:ShopComponent},
     {path:'all-products',component:AllProductsComponent},
-    {path:'ladies-products',component:LadiesProductsComponent},
-    {path:'mens-products',component:MensProductsComponent}
+    {path:'ladies',component:LadiesProductsComponent,
+        children:[
+            {path:'',component:AllLadiesProductsComponent},
+            {path:'watches',component:LadiesWatchesComponent},
+            {path:'necklaces',component:LadiesNecklacesComponent},
+            {path:'rings',component:LadiesRingsComponent},
+            {path:'earrings',component:LadiesEarringsComponent},
+            {path:'bracelets',component:LadiesBraceletsComponent},
+        ]
+    },
+    {path:'mens-products',component:MensProductsComponent},
+    {path:'',redirectTo:'/home',pathMatch:'full'},
 ];

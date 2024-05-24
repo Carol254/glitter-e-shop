@@ -1,20 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { ProductsService } from '../services/products.service';
-import { productData } from '../models/products';
 import { NgFor } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { productData } from '../models/products';
+import { ProductsService } from '../services/products.service';
 
 @Component({
-  selector: 'app-ladies-products',
+  selector: 'app-ladies-rings',
   standalone: true,
-  imports: [NgFor,RouterOutlet],
-  templateUrl: './ladies-products.component.html',
-  styleUrl: './ladies-products.component.css'
+  imports: [NgFor],
+  templateUrl: './ladies-rings.component.html',
+  styleUrl: './ladies-rings.component.css'
 })
-export class LadiesProductsComponent implements OnInit {
-
+export class LadiesRingsComponent implements OnInit {
+  
   constructor(private productsService:ProductsService){}
-
+  
   ladiesProducts:productData[] = [];
 
   ngOnInit(): void {
@@ -29,5 +28,4 @@ export class LadiesProductsComponent implements OnInit {
       }
     })
   }
-
 }

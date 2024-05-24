@@ -2,6 +2,7 @@ import { NgFor } from '@angular/common';
 import { productData } from '../models/products';
 import { ProductsService } from '../services/products.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-all-products',
@@ -14,7 +15,7 @@ export class AllProductsComponent implements  OnInit{
 
   products:productData[]= [];
    
-  constructor(private productService:ProductsService){}
+  constructor(private productService:ProductsService ,private router:Router){}
 
 
   ngOnInit(): void {
@@ -35,6 +36,10 @@ export class AllProductsComponent implements  OnInit{
         }
       }
     });
+  }
+
+  buyNow(){
+    this.router.navigate(['/product-details']);
   }
   
 }

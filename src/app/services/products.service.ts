@@ -8,6 +8,8 @@ import { productData } from '../models/products';
 })
 export class ProductsService {
 
+  private baseUrl = 'http://localhost/glitterinfo';
+
   constructor(private http:HttpClient) { }
 
   
@@ -18,34 +20,38 @@ export class ProductsService {
   };
 
   getAllProducts():Observable<productData[]>{
-    return this.http.get<productData[]>('http://localhost/glitterinfo/list.php');
+    return this.http.get<productData[]>(`${this.baseUrl}/list.php`);
+  }
+
+  getAllProductsById(id:any):Observable<productData>{
+    return this.http.get<productData>(`${this.baseUrl}/list.php?id=${id}`);
   }
 
   getLadiesProducts():Observable<productData[]>{
-    return this.http.get<productData[]>('http://localhost/glitterinfo/ladies.php');
+    return this.http.get<productData[]>(`${this.baseUrl}/ladies.php`);
   }
 
   getLadiesWatches():Observable<productData[]>{
-    return this.http.get<productData[]>('http://localhost/glitterinfo/ladies-watches.php');
+    return this.http.get<productData[]>(`${this.baseUrl}/ladies-watches.php`);
   }
 
   getLadiesNecklaces():Observable<productData[]>{
-    return this.http.get<productData[]>('http://localhost/glitterinfo/ladies-necklaces.php');
+    return this.http.get<productData[]>(`${this.baseUrl}/ladies-necklaces.php`);
   }
   getLadiesRings():Observable<productData[]>{
-    return this.http.get<productData[]>('http://localhost/glitterinfo/ladies-rings.php');
+    return this.http.get<productData[]>(`${this.baseUrl}/ladies-rings.php`);
   }
 
   getLadiesEarrings():Observable<productData[]>{
-    return this.http.get<productData[]>('http://localhost/glitterinfo/ladies-earrings.php');
+    return this.http.get<productData[]>(`${this.baseUrl}/list-earrings.php`);
   } 
 
   getLadiesBracelets():Observable<productData[]>{
-    return this.http.get<productData[]>('http://localhost/glitterinfo/ladies-bracelets.php');
+    return this.http.get<productData[]>(`${this.baseUrl}/ladies-bracelets.php`);
   }  
 
   getMensProducts():Observable<productData[]>{
-    return this.http.get<productData[]>('http://localhost/glitterinfo/men.php');
+    return this.http.get<productData[]>(`${this.baseUrl}/men.php`);
   }
 
 }

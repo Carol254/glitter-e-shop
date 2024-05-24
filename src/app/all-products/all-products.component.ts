@@ -2,7 +2,8 @@ import { NgFor } from '@angular/common';
 import { productData } from '../models/products';
 import { ProductsService } from '../services/products.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-all-products',
@@ -14,6 +15,9 @@ import { Router } from '@angular/router';
 export class AllProductsComponent implements  OnInit{
 
   products:productData[]= [];
+  products$!: Observable<productData[]>;
+  selectedId!: number;
+  
    
   constructor(private productService:ProductsService ,private router:Router){}
 
@@ -38,8 +42,8 @@ export class AllProductsComponent implements  OnInit{
     });
   }
 
-  buyNow(){
-    this.router.navigate(['/product-details']);
+  buyNow(productId:number){
+    this.router.navigate(['/product-details',{id:productId}]);
   }
   
 }

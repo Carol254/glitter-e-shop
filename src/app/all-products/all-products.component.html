@@ -6,7 +6,7 @@
                 <img class="card-img-top" [src]="'http://localhost/glitterinfo/uploads/' + product.image" alt="Product Image">
                 <div class="card-body">
                   <p class="card-text">Price: Kshs.{{product.price}}</p>
-                  <button class="btn btn-extra" (click)="buyNow()">BUY NOW</button>
+                  <button class="btn btn-extra" (click)="buyNow(product.id)">BUY NOW</button>
                 </div>
             </div>
         </div>

@@ -1,6 +1,24 @@
-<div class="h-100vh">
-    <p>details-page works!</p>
-
-
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt explicabo accusamus totam saepe at quis eligendi eum adipisci molestiae earum? Odit, blanditiis dolore magnam nesciunt adipisci laudantium tempora animi accusantium?
-</div>
+<section>
+    <div class="container">
+        <div class="content p-5">
+            <div class="row">
+                <div class="col-4">
+                    <img style="width: 300px; height: 300px;object-position:center ;object-fit: cover;" [src]="'http://localhost/glitterinfo/uploads/' + productDetails.image">
+                </div>
+                <div class="col-8">
+                    <div> {{productDetails.category}}</div>
+                    <div> {{productDetails.genderclass}}</div>
+                    <div class="fw-30">Ksh. {{productDetails.price}}</div>
+                    <div class="ratings">
+                        
+                    </div>
+                    <button class="btn btn-extra">ADD TO CART</button>
+                    <hr>
+                    <p><strong>PROMOTIONS</strong></p>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>

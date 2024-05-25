@@ -24,7 +24,7 @@ export class ProductsService {
   }
 
   getAllProductsById(id:any):Observable<productData>{
-    return this.http.get<productData>(`${this.baseUrl}/list.php?id=${id}`);
+    return this.http.get<productData>(`${this.baseUrl}/list-by-id.php?id=${id}`);
   }
 
   getLadiesProducts():Observable<productData[]>{

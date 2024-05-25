@@ -30,7 +30,8 @@ export class AllLadiesProductsComponent implements OnInit{
     })
   }
 
-  buyNow(){
-    this.router.navigate(['/product-details']);
+  buyNow(productId:number){
+    this.router.navigate(['/product-details',{id:productId}]);
   }
+  
 }

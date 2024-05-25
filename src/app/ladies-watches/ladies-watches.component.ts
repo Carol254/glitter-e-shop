@@ -1,6 +1,6 @@
 import { NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { productData } from '../models/products';
 import { ProductsService } from '../services/products.service';
 
@@ -13,7 +13,7 @@ import { ProductsService } from '../services/products.service';
 })
 export class LadiesWatchesComponent implements OnInit{
   
-  constructor(private productsService:ProductsService){}
+  constructor(private productsService:ProductsService ,private router:Router){}
 
   ladiesProducts:productData[] = [];
 
@@ -28,5 +28,9 @@ export class LadiesWatchesComponent implements OnInit{
         this.ladiesProducts = data;
       }
     })
+  }
+
+  buyNow(productId:number){
+    this.router.navigate(['/product-details',{id:productId}]);
   }
 }

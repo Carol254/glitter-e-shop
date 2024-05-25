@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../services/products.service';
 import { productData } from '../models/products';
 import { NgFor } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-ladies-products',
@@ -13,7 +13,7 @@ import { RouterOutlet } from '@angular/router';
 })
 export class LadiesProductsComponent implements OnInit {
 
-  constructor(private productsService:ProductsService){}
+  constructor(private productsService:ProductsService ){}
 
   ladiesProducts:productData[] = [];
 

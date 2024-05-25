@@ -2,22 +2,46 @@
     <div class="container">
         <div class="content p-5">
             <div class="row">
-                <div class="col-4">
+                <div class="col-lg-5">
                     <img style="width: 300px; height: 300px;object-position:center ;object-fit: cover;" [src]="'http://localhost/glitterinfo/uploads/' + productDetails.image">
+                    <h6 class="mt-1">SHARE THIS PRODUCT</h6>
+                    <div class="d-flex">
+                        <i class="fa-brands fa-twitter"></i>
+                        <div class="mx-2"></div>
+                        <i class="fa-brands fa-instagram"></i>
+                        <div class="mx-2"></div>
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
                 </div>
-                <div class="col-8">
+                <div class="col-7">
                     <div> {{productDetails.category}}</div>
                     <div> {{productDetails.genderclass}}</div>
                     <div class="fw-30">Ksh. {{productDetails.price}}</div>
-                    <div class="ratings">
-                        
+                    <div class="ratings my-3">
+                        <div class="d-flex">
+                           <div><i class="fa-solid fa-star"></i></div> 
+                           <div><i class="fa-solid fa-star"></i></div> 
+                           <div><i class="fa-solid fa-star"></i></div> 
+                           <div><i class="fa-solid fa-star"></i></div> 
+                           <div><i class="fa-regular fa-star"></i></div> 
+                            <div>(4 verified ratings)</div>
+                        </div>
                     </div>
-                    <button class="btn btn-extra">ADD TO CART</button>
+                    <button class="btn btn-sub">ADD TO CART</button>
                     <hr>
                     <p><strong>PROMOTIONS</strong></p>
-                    
+                    <ul>
+                        <li>Free Delivery</li>
+                        <li>Easy  & safer payments via the app</li>
+                    </ul>
                 </div>
             </div>
+<hr>
+            <h5 style="text-decoration: underline;">Product Info</h5>
+            <p classs="pb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore excepturi, nam ut est aut dolore. Inventore, in distinctio quibusdam iste ullam eius consequuntur. 
+                Excepturi vitae, voluptatum distinctio maxime omnis deleniti!localhost Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi, labore ipsum reprehenderit 
+                voluptatibus debitis doloremque dolorem in velit placeat deserunt provident eius a corrupti delectus distinctio voluptate? Deleniti, eum illo!
+            </p>
         </div>
         
     </div>

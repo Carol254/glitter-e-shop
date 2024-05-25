@@ -14,6 +14,8 @@ export class DetailsPageComponent implements OnInit{
 
   productDetails!: productData;
 
+  productInfo!:'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis fugit autem illum nobis voluptas ea, consequatur optio veritatis facilis tenetur corrupti dicta. Tempore minus reiciendis explicabo quo eum atque excepturi?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis fugit autem illum nobis voluptas ea, consequatur optio veritatis facilis tenetur corrupti dicta. Tempore minus reiciendis explicabo quo eum atque excepturi?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis fugit autem illum nobis voluptas ea, consequatur optio veritatis facilis tenetur corrupti dicta. Tempore minus reiciendis explicabo quo eum atque excepturi?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis fugit autem illum nobis voluptas ea, consequatur optio veritatis facilis tenetur corrupti dicta. Tempore minus reiciendis explicabo quo eum atque excepturi?'
+
   constructor(private route:ActivatedRoute ,private productService:ProductsService){}
 
   ngOnInit(): void {
@@ -25,9 +27,7 @@ export class DetailsPageComponent implements OnInit{
     this.productService.getAllProductsById(productId).subscribe({
       next:(data)=>{
         console.log(data);
-
         this.productDetails = data;
-        
       }
     })
 

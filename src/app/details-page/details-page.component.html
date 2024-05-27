@@ -27,7 +27,11 @@
                             <div>(4 verified ratings)</div>
                         </div>
                     </div>
-                    <button class="btn btn-sub">ADD TO CART</button>
+                    <button class="btn btn-sub" (click)="addToCart()">ADD TO CART</button>
+                    <div #counter >
+                        <button class="btn btn-sub" (click)="deleteItems()">-</button>
+                        <button class="btn btn-sub" (click)="addItems()">+</button>
+                    </div>
                     <hr>
                     <p><strong>PROMOTIONS</strong></p>
                     <ul>

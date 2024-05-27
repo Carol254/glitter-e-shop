@@ -14,8 +14,6 @@ export class DetailsPageComponent implements OnInit{
 
   productDetails!: productData;
 
-  productInfo!:'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis fugit autem illum nobis voluptas ea, consequatur optio veritatis facilis tenetur corrupti dicta. Tempore minus reiciendis explicabo quo eum atque excepturi?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis fugit autem illum nobis voluptas ea, consequatur optio veritatis facilis tenetur corrupti dicta. Tempore minus reiciendis explicabo quo eum atque excepturi?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis fugit autem illum nobis voluptas ea, consequatur optio veritatis facilis tenetur corrupti dicta. Tempore minus reiciendis explicabo quo eum atque excepturi?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis fugit autem illum nobis voluptas ea, consequatur optio veritatis facilis tenetur corrupti dicta. Tempore minus reiciendis explicabo quo eum atque excepturi?'
-
   constructor(private route:ActivatedRoute ,private productService:ProductsService){}
 
   ngOnInit(): void {
@@ -30,6 +28,17 @@ export class DetailsPageComponent implements OnInit{
         this.productDetails = data;
       }
     })
+  }
 
+  addToCart(){
+    window.alert('Product added successfully');
+  }
+
+  addItems(){
+
+  }
+
+  deleteItems(){
+    
   }
 }

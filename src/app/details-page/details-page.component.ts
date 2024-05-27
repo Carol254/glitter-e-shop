@@ -49,7 +49,7 @@ export class DetailsPageComponent implements OnInit{
     if (this.itemCount > 1) {
       this.itemCount--;
     } else {
-      this.itemCount = 0;
+      this.itemCount = 1;
       this.showAddToCartBtn = true;
     }
   }

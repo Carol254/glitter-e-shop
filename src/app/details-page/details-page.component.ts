@@ -15,6 +15,7 @@ export class DetailsPageComponent implements OnInit{
 
   productDetails!: productData;
   showAddToCartBtn:boolean = true;
+  itemCount: number = 0;
 
   @ViewChild('counter',{static:false}) counter !: ElementRef;
 
@@ -34,17 +35,22 @@ export class DetailsPageComponent implements OnInit{
     })
   }
 
-  addToCart(){
-    this.counter.nativeElement.classList.remove('d-none');
-    window.alert('Product added successfully');
+  addToCart() {
     this.showAddToCartBtn = false;
+    this.itemCount = 1;
+    window.alert('Product added successfully');
   }
 
-  addItems(){
-
+  addItems() {
+    this.itemCount++;
   }
 
-  deleteItems(){
-    
+  deleteItems() {
+    if (this.itemCount > 1) {
+      this.itemCount--;
+    } else {
+      this.itemCount = 0;
+      this.showAddToCartBtn = true;
+    }
   }
 }

@@ -27,11 +27,16 @@
                             <div>(4 verified ratings)</div>
                         </div>
                     </div>
-                    <button class="btn btn-sub" (click)="addToCart()">ADD TO CART</button>
-                    <div #counter >
-                        <button class="btn btn-sub" (click)="deleteItems()">-</button>
-                        <button class="btn btn-sub" (click)="addItems()">+</button>
-                    </div>
+
+                    <div>
+                        <button *ngIf="showAddToCartBtn" class="btn btn-sub" (click)="addToCart()">ADD TO CART</button>
+                                         
+                        <div #counter *ngIf="!showAddToCartBtn" class="d-flex justify-content-between w-50 mt-1">
+                          <button class="btn btn-sub" (click)="deleteItems()">-</button>
+                          <button class="btn btn-sub" (click)="addItems()">+</button>
+                        </div>
+                      </div>
+                      
                     <hr>
                     <p><strong>PROMOTIONS</strong></p>
                     <ul>

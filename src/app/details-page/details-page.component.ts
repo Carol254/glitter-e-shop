@@ -1,18 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../services/products.service';
 import { productData } from '../models/products';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-details-page',
   standalone: true,
-  imports: [],
+  imports: [NgIf],
   templateUrl: './details-page.component.html',
   styleUrl: './details-page.component.css'
 })
 export class DetailsPageComponent implements OnInit{
 
   productDetails!: productData;
+  showAddToCartBtn:boolean = true;
+
+  @ViewChild('counter',{static:false}) counter !: ElementRef;
 
   constructor(private route:ActivatedRoute ,private productService:ProductsService){}
 
@@ -31,7 +35,9 @@ export class DetailsPageComponent implements OnInit{
   }
 
   addToCart(){
+    this.counter.nativeElement.classList.remove('d-none');
     window.alert('Product added successfully');
+    this.showAddToCartBtn = false;
   }
 
   addItems(){

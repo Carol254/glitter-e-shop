@@ -6,8 +6,9 @@
     padding: -1.5rem 0rem;
 }
 .bg-blurred {
-    /* background-color: hsla(0, 0%, 100%, .75) !important; */
-    background-color: #c9b5a4 !important;
+    background-color: hsla(0, 0%, 100%, .75) !important;
+    
+    /* background-color: #c9b5a4 !important; */
 }
 
 .navbar-full .dropdown-menu {

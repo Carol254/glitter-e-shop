@@ -1,68 +1,65 @@
-<nav class="navbar navbar-full navbar-expand-lg  bg-blurred bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Glitter Jewelry </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" >About</a>
-          </li>
-          <li class="nav-item dropdown ">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"  id="navbarDropdown" role="button" aria-expanded="false">Collections</a>
-            <ul class="dropdown-menu dropdown-menu-scroll" aria-labelledby="navbarDropdown">
-              <div class="d-flex row px-5">
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <li><a class="dropdown-item" routerLink="/all-products"><strong>ALL PRODUCTS</strong></a></li>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <li> <a class="dropdown-item" routerLink="/ladies"><strong>LADIES</strong></a></li>
-                  <li><a class="dropdown-item" routerLink="/ladies/watches">Watches</a></li>
-                  <li><a class="dropdown-item" routerLink="/ladies/necklaces">Necklaces</a></li>
-                  <li><a class="dropdown-item" routerLink="/ladies/rings">Rings</a></li>
-                  <li><a class="dropdown-item" routerLink="/ladies/earrings">Earrings</a></li>
-                  <li><a class="dropdown-item" routerLink="/ladies/bracelets">Bracelets</a></li>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 ">
-                  <li><a class="dropdown-item" routerLink="/mens-products"><strong>MEN</strong></a></li>
-                  <li><a class="dropdown-item" href="#">Men's Watches</a></li>
-                  <li><a class="dropdown-item" href="#">Neck Pieces</a></li>
-                  <li><a class="dropdown-item" href="#">Rings</a></li>
-                  <li><a class="dropdown-item" href="#">Men's Bracelets</a></li>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 ">
-                  <li><a class="dropdown-item" href="#"><strong>PERSONALIZED GIFTS</strong></a></li>
-                  <li><a class="dropdown-item" href="#">Engraved</a></li>
-                  <li><a class="dropdown-item" href="#">Branded</a></li>
-                  <hr>
-                  <li><a class="dropdown-item" href="#"><strong>CRAFTED GIFTS</strong></a></li>
-                  <li><a class="dropdown-item" href="#">Beaded Art</a></li>
-                  <li><a class="dropdown-item" href="#">Crafted Art</a></li>
-                </div>
-               
+<nav class="navbar navbar-full navbar-expand-lg bg-blurred bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Glitter Jewelry</a>
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()" [attr.aria-expanded]="!isNavbarCollapsed" aria-controls="navbarText" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div [ngClass]="{'collapse': isNavbarCollapsed, 'navbar-collapse': true}" id="navbarText">
+      <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+        <li class="nav-item" (click)="closeNavbar()">
+          <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
+        </li>
+        <li class="nav-item" (click)="closeNavbar()">
+          <a class="nav-link" routerLink="/about">About</a>
+        </li>
+        <li class="nav-item dropdown" (click)="toggleNavbar()">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="navbarDropdown" role="button" aria-expanded="false">Collections</a>
+          <ul class="dropdown-menu dropdown-menu-scroll" aria-labelledby="navbarDropdown">
+            <div class="d-flex row px-5">
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <li><a class="dropdown-item" routerLink="/all-products"><strong>ALL PRODUCTS</strong></a></li>
               </div>
-             
-           
-            </ul>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <li><a class="dropdown-item" routerLink="/ladies"><strong>LADIES</strong></a></li>
+                <li><a class="dropdown-item" routerLink="/ladies/watches">Watches</a></li>
+                <li><a class="dropdown-item" routerLink="/ladies/necklaces">Necklaces</a></li>
+                <li><a class="dropdown-item" routerLink="/ladies/rings">Rings</a></li>
+                <li><a class="dropdown-item" routerLink="/ladies/earrings">Earrings</a></li>
+                <li><a class="dropdown-item" routerLink="/ladies/bracelets">Bracelets</a></li>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <li><a class="dropdown-item" routerLink="/mens-products"><strong>MEN</strong></a></li>
+                <li><a class="dropdown-item" href="#">Men's Watches</a></li>
+                <li><a class="dropdown-item" href="#">Neck Pieces</a></li>
+                <li><a class="dropdown-item" href="#">Rings</a></li>
+                <li><a class="dropdown-item" href="#">Men's Bracelets</a></li>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <li><a class="dropdown-item" href="#"><strong>PERSONALIZED GIFTS</strong></a></li>
+                <li><a class="dropdown-item" href="#">Engraved</a></li>
+                <li><a class="dropdown-item" href="#">Branded</a></li>
+                <hr>
+                <li><a class="dropdown-item" href="#"><strong>CRAFTED GIFTS</strong></a></li>
+                <li><a class="dropdown-item" href="#">Beaded Art</a></li>
+                <li><a class="dropdown-item" href="#">Crafted Art</a></li>
+              </div>
+            </div>
+          </ul>
+        </li>
+        <li class="nav-item" (click)="closeNavbar()">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+      <div>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item" (click)="closeNavbar()">
+            <i class="nav-link fas fa-shopping-cart"></i>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+          <li class="nav-item" (click)="closeNavbar()">
+            <i class="nav-link fas fa-search"></i>
           </li>
         </ul>
-        <div>
-            <ul class="navbar-nav ml-auto ">
-                <li class="nav-item">
-                    <i class="nav-link fas  fa-shopping-cart"></i>
-                </li>
-                <li class="nav-item">
-                    <i class="nav-link fas fa-search"></i>
-                </li>
-            </ul>
-        </div>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>

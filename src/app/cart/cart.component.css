@@ -1,10 +1,6 @@
-/* .main{
-    background-color:var(--primary-color);
-    height: 100vh;
+.productImg{
+    width:200px;
+    height:200px;
+    object-fit: cover;
+    object-position:center ;
 }
-.container{
-    margin-top: 90px;
-    margin-bottom: 30px;
-    background-color:var(--primary-color);
-    height: 100vh;
-} */

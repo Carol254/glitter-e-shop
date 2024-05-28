@@ -1,10 +1,11 @@
-import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../services/products.service';
 import { productData } from '../models/products';
 import { NgIf } from '@angular/common';
 import { HeaderComponent } from '../header/header.component';
 import { AppComponent } from '../app.component';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-details-page',
@@ -22,8 +23,9 @@ export class DetailsPageComponent implements OnInit{
 
 
   @ViewChild('counter',{static:false}) counter !: ElementRef;
+  @Output() itemsEvent = new EventEmitter<number>();
 
-  constructor(private route:ActivatedRoute ,private productService:ProductsService){}
+  constructor(private route:ActivatedRoute ,private productService:ProductsService ,private cartService:CartService){}
 
   ngOnInit(): void {
       this.getProductDetails();
@@ -46,14 +48,15 @@ export class DetailsPageComponent implements OnInit{
   }
 
   addItems() {
-    this.itemCount++;
+    this.cartService.addItem();
+    this.itemCount = this.cartService.getItemCount();
+    this.showAddToCartBtn = false;
   }
 
   deleteItems() {
-    if (this.itemCount > 1) {
-      this.itemCount--;
-    } else {
-      this.itemCount = 1;
+    this.cartService.removeItem();
+    this.itemCount = this.cartService.getItemCount();
+    if (this.itemCount === 0) {
       this.showAddToCartBtn = true;
     }
   }

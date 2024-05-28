@@ -13,4 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'glitter_e-shop';
+
+  handleCounterEvent(event:any){
+    console.log('received from child',event);
+  }
 }

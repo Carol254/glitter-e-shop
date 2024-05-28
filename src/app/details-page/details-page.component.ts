@@ -1,13 +1,15 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../services/products.service';
 import { productData } from '../models/products';
 import { NgIf } from '@angular/common';
+import { HeaderComponent } from '../header/header.component';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-details-page',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf,HeaderComponent,AppComponent],
   templateUrl: './details-page.component.html',
   styleUrl: './details-page.component.css'
 })
@@ -15,7 +17,9 @@ export class DetailsPageComponent implements OnInit{
 
   productDetails!: productData;
   showAddToCartBtn:boolean = true;
+
   itemCount: number = 0;
+
 
   @ViewChild('counter',{static:false}) counter !: ElementRef;
 

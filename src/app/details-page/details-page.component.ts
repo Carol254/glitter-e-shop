@@ -23,7 +23,7 @@ export class DetailsPageComponent implements OnInit{
 
 
   @ViewChild('counter',{static:false}) counter !: ElementRef;
-  @Output() itemsEvent = new EventEmitter<number>();
+  @Input()productId!: number;
 
   constructor(private route:ActivatedRoute ,private productService:ProductsService ,private cartService:CartService){}
 
@@ -47,14 +47,16 @@ export class DetailsPageComponent implements OnInit{
     window.alert('Product added successfully');
   }
 
-  addItems() {
-    this.cartService.addItem();
+  addItems(productId:any) {
+    console.log('from details',productId);
+    
+    this.cartService.addItem(productId);
     this.itemCount = this.cartService.getItemCount();
     this.showAddToCartBtn = false;
   }
 
-  deleteItems() {
-    this.cartService.removeItem();
+  deleteItems(productId:any) {
+    this.cartService.removeItem(productId);
     this.itemCount = this.cartService.getItemCount();
     if (this.itemCount === 0) {
       this.showAddToCartBtn = true;

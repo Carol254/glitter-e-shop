@@ -14,6 +14,14 @@
       </div>
     </div>
     
+
+    <div class="cart">
+      <h2>Your Cart</h2>
+      <p>Items in cart: {{ itemCount }}</p>
+      <div *ngFor="let product of products">
+        <p>{{ product.image }} - {{ product.category}}</p>
+      </div>
+    </div>
       
     <!-- End Example Code -->
   </body>

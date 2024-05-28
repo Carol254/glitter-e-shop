@@ -54,4 +54,6 @@ export class ProductsService {
     return this.http.get<productData[]>(`${this.baseUrl}/men.php`);
   }
 
+  
+
 }

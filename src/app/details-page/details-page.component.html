@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     <div>
-                        <button *ngIf="showAddToCartBtn" class="btn btn-sub" (click)="addToCart()">ADD TO CART</button>
+                        <button *ngIf="showAddToCartBtn" class="btn btn-sub" (click)="addToCart(productDetails.id)">ADD TO CART</button>
                                          
                         <div *ngIf="!showAddToCartBtn" class="d-flex justify-content-between w-50 mt-1 align-items-center">
                           <button class="btn btn-sub" (click)="deleteItems(productDetails.id)">-</button>

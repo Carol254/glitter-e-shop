@@ -41,7 +41,8 @@ export class DetailsPageComponent implements OnInit{
     })
   }
 
-  addToCart() {
+  addToCart(productId:any) {
+    this.cartService.addItem(productId);
     this.showAddToCartBtn = false;
     this.itemCount = 1;
     window.alert('Product added successfully');
@@ -49,7 +50,6 @@ export class DetailsPageComponent implements OnInit{
 
   addItems(productId:any) {
     console.log('from details',productId);
-    
     this.cartService.addItem(productId);
     this.itemCount = this.cartService.getItemCount();
     this.showAddToCartBtn = false;

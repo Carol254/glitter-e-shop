@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -9,4 +10,9 @@ import { Component } from '@angular/core';
 })
 export class CheckoutComponent {
 
+  constructor(private router:Router){}
+
+  goToHome(){
+    this.router.navigate(['/home']);
+  }
 }

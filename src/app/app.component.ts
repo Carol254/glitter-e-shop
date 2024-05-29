@@ -16,6 +16,8 @@ import { filter } from 'rxjs/operators';
 })
 export class AppComponent implements OnInit{
   title = 'glitter_e-shop';
+  currentUrl!: string;
+  hideHeaderFooterPaths: string[] = ['/sign-in', '/checkout', ''];
 
   constructor(private router: Router, private viewportScroller: ViewportScroller) {}
 
@@ -25,9 +27,15 @@ export class AppComponent implements OnInit{
     ).subscribe(() => {
       this.viewportScroller.scrollToPosition([0, 0]);
     });
+
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.currentUrl = event.urlAfterRedirects;
+      }
+    });
   }
 
   shouldShowHeaderFooter():boolean{
-    return this.router.url !=='/sign-in';
+    return !this.hideHeaderFooterPaths.includes(this. currentUrl);
   }
 }

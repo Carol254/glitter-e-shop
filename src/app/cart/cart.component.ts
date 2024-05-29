@@ -1,9 +1,9 @@
 import { NgFor } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CartService } from '../services/cart.service';
 import { ProductsService } from '../services/products.service';
 import { productData } from '../models/products';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -16,27 +16,38 @@ export class CartComponent implements OnInit{
 
   itemCount = 0;
   products: productData[] = [];
+  tPrice:any;
+  @ViewChild('totalPrice',{static:false}) totalPrice!:ElementRef;
 
-  constructor(private cartService:CartService ,private productService:ProductsService, private route:ActivatedRoute){}
+  constructor(private cartService:CartService ,private productService:ProductsService, private route:ActivatedRoute ,private router:Router){}
 
 
-  ngOnInit() {
-    this.cartService.items$.subscribe(count => {
-      this.itemCount = count;
-    });
-
-    this.cartService.productIds$.subscribe(ids => {
-      this.products = [];
-      ids.forEach(id => {
-        // Retrieve product details using ActivatedRoute
-        const productId = id;
-        this.productService.getAllProductsById(productId).subscribe(product => {
-          this.products.push(product);
-          console.log(this.products);
-          
-        });
+    ngOnInit() {
+      this.cartService.items$.subscribe(count => {
+        this.itemCount = count;
       });
-    });
-  }
+
+      this.cartService.productIds$.subscribe(ids => {
+        this.products = [];
+        ids.forEach(id => {
+          const productId = id;
+          this.productService.getAllProductsById(productId).subscribe(product => {
+            this.products.push(product);
+            console.log(this.products);
+            this.products.forEach((obj)=>{
+              if(obj.price)
+                {
+                  this.totalPrice.nativeElement.innerHTML = obj.price * this.itemCount;
+                }
+            });
+          });
+        });
+      }); 
+    }
+  
+
+    onCheckOut(){
+      this.router.navigate(['/checkout']);
+    }
   
 }

@@ -13,6 +13,8 @@ import { LadiesBraceletsComponent } from './ladies-bracelets/ladies-bracelets.co
 import { AllLadiesProductsComponent } from './all-ladies-products/all-ladies-products.component';
 import { DetailsPageComponent } from './details-page/details-page.component';
 import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 export const routes: Routes = [
     {path:'home',component:HomeComponent},
@@ -32,5 +34,7 @@ export const routes: Routes = [
     {path:'mens-products',component:MensProductsComponent},
     {path:'product-details',component:DetailsPageComponent},
     {path:'cart',component:CartComponent},
+    {path:'checkout',component:CheckoutComponent},
+    {path:'sign-in',component:SignInComponent},
     {path:'',redirectTo:'/home',pathMatch:'full'},
 ];

@@ -1,9 +1,11 @@
-<div class="container">
+<div class="container p-5">
 
     <div class="content" *ngIf="noItemsInCart()">
-      <div class="container">
-        <div>No items in cart</div>
-        <button class="btn btn-sub w-100">START SHOPPING</button>
+      <div class="container p-3">
+        <div class="place-center"><i class="fa-solid fa-cart-shopping fa-3x"></i></div>
+        <div class="text-center">Your cart is empty</div>
+        <p class="text-center">Browse to check out more items</p>
+        <div class="place-center"><button class="btn btn-sub" (click)="toShop()">START SHOPPING</button></div>
       </div>
     </div>
 

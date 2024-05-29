@@ -53,5 +53,9 @@ export class CartComponent implements OnInit{
     noItemsInCart():boolean{
      return  this.itemCount === 0;
     }
+
+    toShop(){
+      this.router.navigate(['/all-products']);
+    }
   
 }

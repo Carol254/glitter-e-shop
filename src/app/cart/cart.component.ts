@@ -1,4 +1,4 @@
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CartService } from '../services/cart.service';
 import { ProductsService } from '../services/products.service';
@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor,NgIf],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css'
 })
@@ -48,6 +48,10 @@ export class CartComponent implements OnInit{
 
     onCheckOut(){
       this.router.navigate(['/checkout']);
+    }
+
+    noItemsInCart():boolean{
+     return  this.itemCount === 0;
     }
   
 }

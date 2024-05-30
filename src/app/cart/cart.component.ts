@@ -58,4 +58,18 @@ export class CartComponent implements OnInit{
       this.router.navigate(['/all-products']);
     }
   
+    addItems(productId:any) {
+      console.log('from details',productId);
+      this.cartService.addItem(productId);
+      this.itemCount = this.cartService.getItemCount();
+
+    }
+  
+    deleteItems(productId:any) {
+      this.cartService.removeItem(productId);
+      this.itemCount = this.cartService.getItemCount();
+      if (this.itemCount === 0) {
+  
+      }
+    }
 }
